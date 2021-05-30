@@ -2,6 +2,7 @@
 const fs = require('fs');
 const CSVParser = require('csv-parser');
 const fastCSV = require('fast-csv');
+const csvAppend = require('csv-append');
 module.exports = {
     read: async (filename) => {
         let rows = [];
@@ -23,10 +24,17 @@ module.exports = {
                     headers: true
                 })
                 .pipe(writeStream)
-                .on('end', () => {
+                .on('finish', () => {
                     resolve();
                 });
         });
-
+    },
+    append: async (row, path) => {
+        const {
+            append,
+            end
+        } = csvAppend.default(path, true);
+        append(row);
+        await end();
     }
 }
