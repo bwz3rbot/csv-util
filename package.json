@@ -1,8 +1,8 @@
 {
   "name": "csv-util",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "csv utility package",
+  "main": "src/util/csv.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
