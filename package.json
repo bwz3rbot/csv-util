@@ -1,5 +1,5 @@
 {
-  "name": "csv-util",
+  "name": "csv-append-write-read",
   "version": "1.0.0",
   "description": "csv utility package",
   "main": "src/util/csv.js",
